@@ -49,7 +49,7 @@ const Help = () => {
             <td>Know  current date</td>
           </tr>
           <tr>
-            <td>SwitchGUI</td>
+            <td>witchGUI</td>
             <td>Switch to GUI portfolio</td>
           </tr>
         </tbody>
