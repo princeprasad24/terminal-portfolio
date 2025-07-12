@@ -11,16 +11,26 @@ import Projects from "./Components/projects";
 function App() {
   const [input, setInput] = useState("");
   const [showOutput, setShoeOutput] = useState(false);
+  const [time , setTime] = useState(new Date());
 
   const [getData, setData] = useState({
     output: [
-      { type: "text", value: ` ` },
+        
       { type: "text", value: "Welcome to My Terminal Portfolio." },
       { type: "text", value: "Type 'help' to see available commands." },
     ],
     history: [],
     length: -1,
   });
+
+  useEffect(()=>{
+    const time = setInterval(()=>{
+      setTime(new Date());
+    } , 1000);
+
+    return clearInterval(time);
+  } , [])
+  
 
   const inputRef = useRef(null);
 
@@ -83,12 +93,20 @@ function App() {
         case "projects":
           newOutput.push({ type: "component", value: <Projects /> });
           break;
+        case "whoami":
+          newOutput.push({ type: "component", value: "You are visitor" });
+          break;
+        case "time":
+          newOutput.push({ type: "component", value:  `${time.toLocaleTimeString()}` });
+          break;
+        // case "date":
+        //   newOutput.push({ type: "component", value:  `${time.toLocaleDateString()}` });
+        //   break;
         case "contact":
           newOutput.push({ type: "component", value: <Contact /> });
           break;
         case "exit":
-          // window.location.href = "about:blank";
-          window.close();
+          window.location.href = "about:blank";
           break;
         case "clear":
           return {
@@ -153,7 +171,7 @@ function App() {
           <>
             <p>&gt;terminal-portfolio@0.0.0 dev</p>
             <p>portfolio [Version 0.3.0]</p>
-
+            <p>&nbsp;</p>
             {getData.output.map((item, idx) =>
               item.type === "text" ? (
                 <p key={idx}>{item.value}</p>

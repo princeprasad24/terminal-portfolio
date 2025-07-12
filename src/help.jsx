@@ -40,6 +40,14 @@ const Help = () => {
             <td>help</td>
             <td>Lists all available commands</td>
           </tr>
+          <tr>
+            <td>time</td>
+            <td>Know  current time</td>
+          </tr>
+          <tr>
+            <td>date</td>
+            <td>Know  current date</td>
+          </tr>
         </tbody>
       </table>
     </div>
