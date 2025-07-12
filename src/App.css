@@ -44,7 +44,7 @@ input {
   height: 100%;
 }
 
-.contact-div a {
+ a {
  color: #00ff73;
  font-family:  Courier, monospace;
  font-weight: 700;

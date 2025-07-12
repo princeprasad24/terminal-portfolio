@@ -33,43 +33,18 @@ function App() {
   
 
   const inputRef = useRef(null);
+  
 
   const focusInput = () => {
     inputRef.current?.focus();
+    
   };
 
   const userCommand = (cmd) => {
     if (cmd.trim() === "") return;
 
     setData((prev) => {
-      // switch (cmd) {
-      //   case "help":
-      //     setComponents((prev) => [...prev, <Help />]);
-      //     break;
-      //   case "home":
-      //     setComponents((prev) => [...prev, <Home />]);
-      //     break;
-      //   case "about":
-      //     setComponents((prev) => [...prev, <About />]);
-      //     break;
-      //   case "skills":
-      //     setComponents((prev) => [...prev, <Skills />]);
-      //     break;
-      //   case "projects":
-      //     setComponents((prev) => [...prev, <Projects />]);
-      //     break;
-      //   case "contact":
-      //     setComponents((prev) => [...prev, <Contact />]);
-      //     break;
-      //   case "clear":
-      //     setComponents([]);
-      //     setLines([]);
-      //     break;
-      //   default:
-      //     errorLine.push(
-      //       `Unknown command: ${cmd}  \n.Type 'help' for a list of commands.`
-      //     );
-      // }
+      
       const newOutput = [
         ...prev.output,
         { type: "text", value: `terminal@prasd-portfolio:~$ ${cmd}` },
@@ -99,14 +74,17 @@ function App() {
         case "time":
           newOutput.push({ type: "component", value:  `${time.toLocaleTimeString()}` });
           break;
-        // case "date":
-        //   newOutput.push({ type: "component", value:  `${time.toLocaleDateString()}` });
-        //   break;
+        case "date":
+          newOutput.push({ type: "component", value:  `${time.toLocaleDateString()}` });
+          break;
         case "contact":
           newOutput.push({ type: "component", value: <Contact /> });
           break;
         case "exit":
           window.location.href = "about:blank";
+          break;
+        case "switchGUI":
+          window.location.href = "https://princeprasad24.github.io/prasad-portfolio/";
           break;
         case "clear":
           return {

@@ -48,6 +48,10 @@ const Help = () => {
             <td>date</td>
             <td>Know  current date</td>
           </tr>
+          <tr>
+            <td>SwitchGUI</td>
+            <td>Switch to GUI portfolio</td>
+          </tr>
         </tbody>
       </table>
     </div>
