@@ -84,7 +84,7 @@ function App() {
           window.location.href = "about:blank";
           break;
         case "switchGUI":
-          window.location.href = "https://princeprasad24.github.io/prasad-portfolio/";
+          window.open("https://princeprasad24.github.io/prasad-portfolio/", "_blank");
           break;
         case "clear":
           return {
