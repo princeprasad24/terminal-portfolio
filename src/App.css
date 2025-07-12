@@ -14,10 +14,10 @@ body {
 .container {
   /* height: 100vh; */
   /* width: 100vw; */
-  width: 90%;
+  /* width: 90%; */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: end;
+  justify-content: end;
   gap: 5px;
   padding-top: 50px;
   scrollbar-width: thin;
@@ -41,11 +41,9 @@ input {
 
 .output {
   width: 100%;
-  max-width: 800px;
+  font-size: large;
   background-color: #000;
-  border: 2px solid #00ff00;
-  padding: 20px;
-  box-shadow: 0 0 10px #00ff00;
+  padding: 20px;    
   overflow-y: auto;
   height: 80vh;
 }
@@ -75,12 +73,3 @@ input {
   text-align: left;
 }
 
-.help-table th {
-  background-color: #0d1117;
-  color: #00ff00;
-}
-
-.help-table td {
-  background-color: #182216;
-  color: #c9d1d9;
-}

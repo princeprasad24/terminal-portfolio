@@ -86,6 +86,10 @@ function App() {
         case "contact":
           newOutput.push({ type: "component", value: <Contact /> });
           break;
+        case "exit":
+          // window.location.href = "about:blank";
+          window.close();
+          break;
         case "clear":
           return {
             output: [],
@@ -148,7 +152,7 @@ function App() {
         {showOutput && (
           <>
             <p>&gt;terminal-portfolio@0.0.0 dev</p>
-            <p>portfolio [Version 0.3]</p>
+            <p>portfolio [Version 0.3.0]</p>
 
             {getData.output.map((item, idx) =>
               item.type === "text" ? (
