@@ -6,7 +6,7 @@ export default function Skills() {
       <div>Skills</div>
       <p>
         <pre>
-{`Languages     : JavaScript, HTML, CSS, C++
+{`Languages     : JavaScript, HTML, CSS,
 Frameworks    : React.js, Next.js, Express.js
 Libraries     : Tailwind CSS, Bootstrap
 Backend       : Node.js, MongoDB, REST APIs

@@ -70,7 +70,7 @@ input {
 
 .help-table th,
 .help-table td {
-  border: 1px solid #00ff00;
+  /* border: 1px solid #00ff00; */
   padding: 8px 12px;
   text-align: left;
 }

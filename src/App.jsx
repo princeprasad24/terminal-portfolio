@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 import Help from "./help";
@@ -10,8 +10,11 @@ import Projects from "./Components/projects";
 
 function App() {
   const [input, setInput] = useState("");
+  const [showOutput, setShoeOutput] = useState(false);
+
   const [getData, setData] = useState({
     output: [
+      { type: "text", value: ` ` },
       { type: "text", value: "Welcome to My Terminal Portfolio." },
       { type: "text", value: "Type 'help' to see available commands." },
     ],
@@ -129,15 +132,32 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setShoeOutput(true);
+    }, 2200);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <div className="container" onClick={focusInput}>
       <div className="output">
-        {getData.output.map((item, idx) =>
-          item.type === "text" ? (
-            <p key={idx}>{item.value}</p>
-          ) : (
-            <div key={idx}>{item.value}</div>
-          )
+        <p>terminal@user:~$</p>
+        <p>terminal@user:~$ install prasad-portfolio </p>
+
+        {showOutput && (
+          <>
+            <p>&gt;terminal-portfolio@0.0.0 dev</p>
+            <p>portfolio [Version 0.3]</p>
+
+            {getData.output.map((item, idx) =>
+              item.type === "text" ? (
+                <p key={idx}>{item.value}</p>
+              ) : (
+                <div key={idx}>{item.value}</div>
+              )
+            )}
+          </>
         )}
 
         <div className="input-line">
